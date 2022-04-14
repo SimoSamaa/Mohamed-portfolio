@@ -21,6 +21,15 @@ modeSwitch.addEventListener("click", () => {
     }
 });
 
+let clicks = document.querySelectorAll(".click");
+
+clicks.forEach((click) => {
+    click.onclick = function () {
+        clicks.forEach((click) => click.classList.remove("clk"));
+        click.classList.add("clk");
+    };
+});
+
 // svg===================================
 let skills = document.querySelector("#skills");
 let htmlCircle = document.querySelector(" .html circle");
@@ -71,4 +80,3 @@ window.addEventListener("scroll", function () {
         start = true;
     }
 });
-
