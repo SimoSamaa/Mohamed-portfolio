@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsiv.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Portfolio-simo</title>
     <link rel="icon" href="img/logo-white.png">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -34,31 +36,31 @@
         <div class="menu-bar">
             <div class="menu">
                 <ul class="menu-links">
-                    <li title="Home" class="click">
+                    <li title="Home">
                         <a href="#home">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Home</span>
                         </a>
                     </li>
-                    <li title="About" class="click">
+                    <li title="About">
                         <a href="#about">
                             <i class='bx bx-id-card icon'></i>
                             <span class="text nav-text">About</span>
                         </a>
                     </li>
-                    <li title="Skills" class="click">
+                    <li title="Skills">
                         <a href="#skills">
                             <i class='bx bx-wrench icon'></i>
                             <span class="text nav-text">Skills</span>
                         </a>
                     </li>
-                    <li title="Services" class="click">
+                    <li title="Services">
                         <a href="#services">
                             <i class='bx bx-desktop icon'></i>
                             <span class="text nav-text">Services</span>
                         </a>
                     </li>
-                    <li title="Contact" class="click">
+                    <li title="Contact">
                         <a href="#contact">
                             <i class='bx bx-message icon'></i>
                             <span class="text nav-text">Contact</span>
@@ -85,7 +87,11 @@
     <!--===== section-home =====-->
     <section id="home">
         <div class="home-text text">
-            <h1>Hi ,I am Mohamed , Web developer.</h1>
+            <div class="heading">
+                <h1 class="headingOne">Hi,I am Mohamed,</h1>
+                <h1 class="headingTwo">Web developer.</h1>
+            </div>
+            <h1 style="display: none;">Hi,I am Mohamed, Web developer.</h1>
             <br>
             <p>I can create and design web
                 pages as you order</p>
@@ -261,7 +267,6 @@
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
 </body>
 
 </html>

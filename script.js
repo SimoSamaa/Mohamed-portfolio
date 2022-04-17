@@ -21,15 +21,6 @@ modeSwitch.addEventListener("click", () => {
     }
 });
 
-let clicks = document.querySelectorAll(".click");
-
-clicks.forEach((click) => {
-    click.onclick = function () {
-        clicks.forEach((click) => click.classList.remove("clk"));
-        click.classList.add("clk");
-    };
-});
-
 // svg===================================
 let skills = document.querySelector("#skills");
 let htmlCircle = document.querySelector(" .html circle");
@@ -80,3 +71,19 @@ window.addEventListener("scroll", function () {
         start = true;
     }
 });
+
+// loading screen
+
+let loading = document.createElement("div");
+let loader = document.createElement("div");
+loading.className = "loading";
+loader.className = "loader";
+loading.appendChild(loader);
+document.body.prepend(loading);
+
+window.onload = function () {
+    document.querySelector(".loading").style.display = "none"
+}
+
+
+
