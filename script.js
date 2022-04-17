@@ -72,18 +72,4 @@ window.addEventListener("scroll", function () {
     }
 });
 
-// loading screen
-
-let loading = document.createElement("div");
-let loader = document.createElement("div");
-loading.className = "loading";
-loader.className = "loader";
-loading.appendChild(loader);
-document.body.prepend(loading);
-
-window.onload = function () {
-    document.querySelector(".loading").style.display = "none"
-}
-
-
 
