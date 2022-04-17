@@ -5,6 +5,7 @@
 
     .home-text h1 {
         display: block !important;
+        color: var(--h1-title);
     }
 
     #home .home-text p {
