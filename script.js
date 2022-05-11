@@ -1,6 +1,28 @@
 AOS.init();
+// line progress scrollY =====================
+window.addEventListener("scroll", lineProgressScrollY);
 
-// sidebar===================================
+let lineProgress = document.createElement("div");
+lineProgress.className = "lineProgress";
+document.body.prepend(lineProgress);
+
+function lineProgressScrollY() {
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let all = 100 * (scrollTop / scrollHeight);
+    lineProgress.style.width = all + "%";
+}
+
+// whatsapp ==================================
+let whatsappBtn = document.querySelector(".whatsapp-btn");
+
+window.addEventListener("scroll", () => {
+    console.log(this.scrollY);
+    if (scrollY >= 100) {
+        whatsappBtn.classList.add("show");
+    } else whatsappBtn.classList.remove("show");
+});
+// sidebar ===================================
 const body = document.querySelector('body'),
     sidebar = body.querySelector('nav'),
     toggle = body.querySelector(".toggle"),
@@ -21,7 +43,7 @@ modeSwitch.addEventListener("click", () => {
     }
 });
 
-// svg===================================
+// svg ===================================
 let skills = document.querySelector("#skills");
 let htmlCircle = document.querySelector(" .html circle");
 let cssCircle = document.querySelector(" .css circle");

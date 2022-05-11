@@ -175,6 +175,15 @@
     .ser-content {
         padding: 0;
     }
+
+    /* whatsapp-btn */
+    .whatsapp-btn {
+        inset: auto 1rem 1rem auto;
+    }
+
+    .whatsapp-btn::before {
+        display: none;
+    }
 }
 
 @media (max-width:500px) {
