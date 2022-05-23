@@ -246,13 +246,10 @@ body.dark .sidebar li a:hover .text {
     flex-direction: column;
     justify-content: space-between;
     overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 .menu-bar::-webkit-scrollbar {
-    display: none;
-}
-
-.menu-bar::-moz-scrollbar {
     display: none;
 }
 
