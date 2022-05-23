@@ -252,6 +252,11 @@ body.dark .sidebar li a:hover .text {
     display: none;
 }
 
+.menu-bar::-moz-scrollbar {
+    display: none;
+}
+
+
 .sidebar .menu-bar .mode {
     border-radius: 6px;
     background-color: var(--primary-color-light);
@@ -476,6 +481,82 @@ body.dark .switch::before {
     font-size: 48px;
     position: relative;
     -webkit-text-stroke: 2px var(--primary-color);
+    width: fit-content;
+    margin: 0 auto;
+    padding-inline: 1rem;
+    position: relative;
+}
+
+/* line-animation */
+.title>span {
+    position: absolute;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.title>span:nth-child(1) {
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-image: linear-gradient(90deg, transparent, var(--primary-color) 50%);
+    animation: lineTop 1s ease infinite alternate;
+    -webkit-animation: lineTop 1s ease infinite;
+}
+
+@keyframes lineTop {
+    to {
+        width: 95%;
+    }
+}
+
+.title>span:nth-child(2) {
+    right: 0;
+    width: 2.5px;
+    height: 0;
+    background-image: linear-gradient(180deg, transparent, var(--primary-color) 50%);
+    animation: lineRight 1s ease infinite;
+    -webkit-animation: lineRight 1s ease infinite;
+}
+
+@keyframes lineRight {
+    to {
+        height: 95%;
+    }
+}
+
+.title>span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2.5px;
+    background-image: linear-gradient(to left, transparent, var(--primary-color) 50%);
+    animation: lineBottoom 1s ease infinite;
+    -webkit-animation: lineBottoom 1s ease infinite;
+}
+
+@keyframes lineBottoom {
+    to {
+        width: 95%;
+    }
+}
+
+.title>span:nth-child(4) {
+    bottom: 0;
+    left: 0;
+    width: 2.5px;
+    height: 0;
+    background-image: linear-gradient(360deg, transparent, var(--primary-color) 50%);
+    animation: lineLeft 1s ease infinite;
+    -webkit-animation: lineLeft 1s ease infinite;
+}
+
+@keyframes lineLeft {
+    to {
+        height: 95%;
+    }
 }
 
 .about-container {
