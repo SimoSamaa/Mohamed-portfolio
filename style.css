@@ -227,6 +227,10 @@ body.dark .sidebar header .toggle {
     background-color: var(--primary-color);
 }
 
+.sidebar li a.scrollY :is(.icon, .text) {
+    color: var(--sidebar-color);
+}
+
 .click.clk {
     background-color: var(--primary-color);
     border-radius: 6px;
