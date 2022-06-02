@@ -38,6 +38,8 @@ body {
     -o-transition: var(--tran-05);
 }
 
+
+
 ::selection {
     background-color: var(--primary-color);
     color: #fff;
@@ -221,6 +223,10 @@ body.dark .sidebar header .toggle {
     outline: none;
 }
 
+.sidebar li a.scrollY {
+    background-color: var(--primary-color);
+}
+
 .click.clk {
     background-color: var(--primary-color);
     border-radius: 6px;
@@ -353,7 +359,7 @@ body.dark .switch::before {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 1.5px;
+    width: 2px;
     height: 55.2px;
     background-color: var(--body-color);
     z-index: 11;
@@ -361,7 +367,7 @@ body.dark .switch::before {
 
 .heading::after {
     left: 84%;
-    width: 4px;
+    width: 3.5px;
     top: 0;
     background-color: var(--body-color);
 }
@@ -389,7 +395,7 @@ body.dark .switch::before {
 }
 
 #home .home-text .heading .headingOne::after {
-    width: 2px;
+    width: 1px;
     background-color: var(--h1-title);
     animation:
         textOne 6s steps(16) forwards,
@@ -406,7 +412,7 @@ body.dark .switch::before {
 }
 
 #home .home-text .heading .headingTwo::after {
-    width: 2px;
+    width: 1px;
     background-color: var(--h1-title);
     animation:
         textTwo 6s steps(14) 6s forwards,

@@ -13,11 +13,25 @@ function lineProgressScrollY() {
     lineProgress.style.width = all + "%";
 }
 
+// scrollY links ===================================
+let menuLinks = document.querySelectorAll(".menu-links li a");
+let section = document.querySelectorAll("section");
+
+function scrollYsection() {
+    let sec = section.length;
+    while (sec-- && window.scrollY - 200 < section[sec].offsetTop) {
+        menuLinks.forEach(links => links.classList.remove("scrollY"));
+        menuLinks[sec].classList.add("scrollY");
+    };
+};
+scrollYsection();
+window.addEventListener("scroll", scrollYsection);
+
 // whatsapp ==================================
 let whatsappBtn = document.querySelector(".whatsapp-btn");
 
 window.addEventListener("scroll", () => {
-    console.log(this.scrollY);
+    // console.log(this.scrollY); to show number of scrolling Y
     if (scrollY >= 100) {
         whatsappBtn.classList.add("show");
     } else whatsappBtn.classList.remove("show");
