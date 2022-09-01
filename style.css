@@ -25,7 +25,7 @@
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
     --tran-04: all 0.3s ease;
-    --tran-05: all 0.3s ease;
+    --tran-05: all 0.5s ease;
 }
 
 body {
@@ -37,8 +37,6 @@ body {
     -ms-transition: var(--tran-05);
     -o-transition: var(--tran-05);
 }
-
-
 
 ::selection {
     background-color: var(--primary-color);
@@ -263,7 +261,6 @@ body.dark .sidebar li a:hover .text {
     display: none;
 }
 
-
 .sidebar .menu-bar .mode {
     border-radius: 6px;
     background-color: var(--primary-color-light);
@@ -483,7 +480,6 @@ body.dark .switch::before {
 }
 
 .title {
-    text-align: center;
     color: var(--h1-title);
     font-size: 48px;
     position: relative;
@@ -492,77 +488,99 @@ body.dark .switch::before {
     margin: 0 auto;
     padding-inline: 1rem;
     position: relative;
+    border: 3px solid var(--h1-title);
+    transition: var(--tran-05);
+    -webkit-transition: var(--tran-05);
+    -moz-transition: var(--tran-05);
+    -ms-transition: var(--tran-05);
+    -o-transition: var(--tran-05);
+    isolation: isolate;
+    border-radius: .5em;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -ms-border-radius: .5em;
+    -o-border-radius: .5em;
 }
 
-/* line-animation */
-.title>span {
+.title:hover {
+    border-color: transparent;
+    transition-delay: .5s;
+}
+
+.title::before,
+.title::after {
+    content: "";
     position: absolute;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width: .4em;
+    height: .4em;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: -1;
 }
 
-.title>span:nth-child(1) {
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-image: linear-gradient(90deg, transparent, var(--primary-color) 50%);
-    animation: lineTop 1s ease infinite alternate;
-    -webkit-animation: lineTop 1s ease infinite;
+.title::before {
+    left: -40px;
 }
 
-@keyframes lineTop {
-    to {
-        width: 95%;
+.title::after {
+    right: -40px;
+}
+
+.title:hover::before {
+    animation: left-bool .5s linear forwards;
+    -webkit-animation: left-bool .5s linear forwards;
+}
+
+@keyframes left-bool {
+    50% {
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+
+    100% {
+        left: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: .5em 0 0 .5em;
+        -webkit-border-radius: .5em 0 0 .5em;
+        -moz-border-radius: .5em 0 0 .5em;
+        -ms-border-radius: .5em 0 0 .5em;
+        -o-border-radius: .5em 0 0 .5em;
     }
 }
 
-.title>span:nth-child(2) {
-    right: 0;
-    width: 2.5px;
-    height: 0;
-    background-image: linear-gradient(180deg, transparent, var(--primary-color) 50%);
-    animation: lineRight 1s ease infinite;
-    -webkit-animation: lineRight 1s ease infinite;
+.title:hover::after {
+    animation: right-bool .5s linear forwards;
+    -webkit-animation: right-bool .5s linear forwards;
 }
 
-@keyframes lineRight {
-    to {
-        height: 95%;
+@keyframes right-bool {
+    50% {
+        right: 0;
+        width: 12px;
+        height: 12px;
     }
-}
 
-.title>span:nth-child(3) {
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 2.5px;
-    background-image: linear-gradient(to left, transparent, var(--primary-color) 50%);
-    animation: lineBottoom 1s ease infinite;
-    -webkit-animation: lineBottoom 1s ease infinite;
-}
-
-@keyframes lineBottoom {
-    to {
-        width: 95%;
-    }
-}
-
-.title>span:nth-child(4) {
-    bottom: 0;
-    left: 0;
-    width: 2.5px;
-    height: 0;
-    background-image: linear-gradient(360deg, transparent, var(--primary-color) 50%);
-    animation: lineLeft 1s ease infinite;
-    -webkit-animation: lineLeft 1s ease infinite;
-}
-
-@keyframes lineLeft {
-    to {
-        height: 95%;
+    100% {
+        right: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 0 .5em .5em 0;
+        -webkit-border-radius: 0 .5em .5em 0;
+        -moz-border-radius: 0 .5em .5em 0;
+        -ms-border-radius: 0 .5em .5em 0;
+        -o-border-radius: 0 .5em .5em 0;
     }
 }
 
