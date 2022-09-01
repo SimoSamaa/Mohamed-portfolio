@@ -310,4 +310,13 @@ html {
     .three p {
         font-size: 18px;
     }
+
+    .title {
+        background-color: var(--primary-color);
+    }
+
+    .title::before,
+    .title::after {
+        display: none;
+    }
 }
